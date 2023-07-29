@@ -1,567 +1,359 @@
 {
-	"info": {
-		"_postman_id": "04ec00c7-6e32-4023-8d06-f9d86cc28c92",
-		"name": "openAI",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10945553"
-	},
-	"item": [
-		{
-			"name": "File",
-			"item": [
-				{
-					"name": "listFile",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "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",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://api.openai.com/v1/files",
-							"protocol": "https",
-							"host": [
-								"api",
-								"openai",
-								"com"
-							],
-							"path": [
-								"v1",
-								"files"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "uploadFile",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "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",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "multipart/form-data",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "file",
-									"type": "file",
-									"src": "/D:/Admin/OpenAI/react-nodejs-chatgpt-tutorial/myData_prepared.jsonl"
-								},
-								{
-									"key": "purpose",
-									"value": "fine-tune",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "https://api.openai.com/v1/files",
-							"protocol": "https",
-							"host": [
-								"api",
-								"openai",
-								"com"
-							],
-							"path": [
-								"v1",
-								"files"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "deleteFile",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "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",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "multipart/form-data",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "file",
-									"type": "file",
-									"src": "/D:/Admin/OpenAI/react-nodejs-chatgpt-tutorial/myData_prepared.jsonl"
-								},
-								{
-									"key": "purpose",
-									"value": "fine-tune",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "https://api.openai.com/v1/files/file-rhdKEQjq3necEkpPs1C6BN28",
-							"protocol": "https",
-							"host": [
-								"api",
-								"openai",
-								"com"
-							],
-							"path": [
-								"v1",
-								"files",
-								"file-rhdKEQjq3necEkpPs1C6BN28"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Fine-tunes",
-			"item": [
-				{
-					"name": "create",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "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",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"training_file\": \"file-rhdKEQjq3necEkpPs1C6BN28\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://api.openai.com/v1/fine-tunes",
-							"protocol": "https",
-							"host": [
-								"api",
-								"openai",
-								"com"
-							],
-							"path": [
-								"v1",
-								"fine-tunes"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "list",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "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",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://api.openai.com/v1/fine-tunes",
-							"protocol": "https",
-							"host": [
-								"api",
-								"openai",
-								"com"
-							],
-							"path": [
-								"v1",
-								"fine-tunes"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "retrieve",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "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",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://api.openai.com/v1/fine-tunes/ft-lLBt0PtbBJZgwSk8yCQ7u0DD",
-							"protocol": "https",
-							"host": [
-								"api",
-								"openai",
-								"com"
-							],
-							"path": [
-								"v1",
-								"fine-tunes",
-								"ft-lLBt0PtbBJZgwSk8yCQ7u0DD"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "cancelFileTune",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "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",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://api.openai.com/v1/fine-tunes/ft-ygvB9qTrzexiwWIQYiKIrwvV/cancel",
-							"protocol": "https",
-							"host": [
-								"api",
-								"openai",
-								"com"
-							],
-							"path": [
-								"v1",
-								"fine-tunes",
-								"ft-ygvB9qTrzexiwWIQYiKIrwvV",
-								"cancel"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "deleteFileTune",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "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",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://api.openai.com/v1/models/{model}",
-							"protocol": "https",
-							"host": [
-								"api",
-								"openai",
-								"com"
-							],
-							"path": [
-								"v1",
-								"models",
-								"{model}"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Models",
-			"item": [
-				{
-					"name": "getModels",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "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",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://api.openai.com/v1/models",
-							"protocol": "https",
-							"host": [
-								"api",
-								"openai",
-								"com"
-							],
-							"path": [
-								"v1",
-								"models"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "retrieveModel",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "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",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://api.openai.com/v1/models/curie",
-							"protocol": "https",
-							"host": [
-								"api",
-								"openai",
-								"com"
-							],
-							"path": [
-								"v1",
-								"models",
-								"curie"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Chat",
-			"item": [
-				{
-					"name": "chatCompletions",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "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",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"model\": \"gpt-3.5-turbo\",\r\n  \"messages\": [{\"role\": \"assistant\", \"content\": \"Đối tác của công ty ABSoltech\"}]\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://api.openai.com/v1/chat/completions",
-							"protocol": "https",
-							"host": [
-								"api",
-								"openai",
-								"com"
-							],
-							"path": [
-								"v1",
-								"chat",
-								"completions"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Completions",
-			"item": [
-				{
-					"name": "completions",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "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",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"model\": \"text-davinci-003\",\r\n    \"prompt\": \"Giới thiệu về công ty ABSoltech\",\r\n    \"max_tokens\": 50\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://api.openai.com/v1/completions",
-							"protocol": "https",
-							"host": [
-								"api",
-								"openai",
-								"com"
-							],
-							"path": [
-								"v1",
-								"completions"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		}
-	]
+    "client": "Thunder Client",
+    "collectionName": "openAI",
+    "dateExported": "2023-07-29T01:35:04.659Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "0512bb12-b755-4f86-9a3f-2e9a6191e6d3",
+            "name": "File",
+            "containerId": "",
+            "created": "2023-07-29T01:08:50.114Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "f9a02575-1e07-4ecc-982d-c3e8df5cc8e5",
+            "name": "Fine-tunes",
+            "containerId": "",
+            "created": "2023-07-29T01:08:50.115Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "4eae5f82-f36f-45d9-a7f3-79f00bf9a2c9",
+            "name": "Models",
+            "containerId": "",
+            "created": "2023-07-29T01:08:50.116Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "3d85aff5-61f3-4a49-b4ab-656934d81d7e",
+            "name": "Chat",
+            "containerId": "",
+            "created": "2023-07-29T01:08:50.117Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "5dd2cc2a-a8f1-4abf-914b-95864f813869",
+            "name": "Completions",
+            "containerId": "",
+            "created": "2023-07-29T01:08:50.118Z",
+            "sortNum": 50000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "dba5a8be-a744-4691-afd1-0a3e8b60b7e1",
+            "colId": "d1ad003b-38cf-4718-a293-56cf44bbfafe",
+            "containerId": "0512bb12-b755-4f86-9a3f-2e9a6191e6d3",
+            "name": "listFile",
+            "url": "https://api.openai.com/v1/files",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-07-29T01:08:50.114Z",
+            "modified": "2023-07-29T01:10:01.439Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "e0815ac7-4f79-4d2a-a2b1-ade7f2566d4a",
+            "colId": "d1ad003b-38cf-4718-a293-56cf44bbfafe",
+            "containerId": "0512bb12-b755-4f86-9a3f-2e9a6191e6d3",
+            "name": "uploadFile",
+            "url": "https://api.openai.com/v1/files",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-07-29T01:08:50.115Z",
+            "modified": "2023-07-29T01:10:34.213Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "multipart/form-data"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "purpose",
+                        "value": "fine-tune"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "file",
+                        "value": "/D:/Admin/OpenAI/react-nodejs-chatgpt-tutorial/myData_prepared.jsonl"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "ec7d81fa-6ab1-4d0c-a2b5-902d389c8481",
+            "colId": "d1ad003b-38cf-4718-a293-56cf44bbfafe",
+            "containerId": "0512bb12-b755-4f86-9a3f-2e9a6191e6d3",
+            "name": "deleteFile",
+            "url": "https://api.openai.com/v1/files/file-rhdKEQjq3necEkpPs1C6BN28",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2023-07-29T01:08:50.116Z",
+            "modified": "2023-07-29T01:10:39.223Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "multipart/form-data"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "purpose",
+                        "value": "fine-tune"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "file",
+                        "value": "/D:/Admin/OpenAI/react-nodejs-chatgpt-tutorial/myData_prepared.jsonl"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "aca11529-9360-4315-9f65-94484d7e6280",
+            "colId": "d1ad003b-38cf-4718-a293-56cf44bbfafe",
+            "containerId": "f9a02575-1e07-4ecc-982d-c3e8df5cc8e5",
+            "name": "create",
+            "url": "https://api.openai.com/v1/fine-tunes",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-07-29T01:08:50.117Z",
+            "modified": "2023-07-29T01:10:49.445Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"training_file\": \"file-rhdKEQjq3necEkpPs1C6BN28\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "1a5ba193-4a07-4318-af13-dc54da613b78",
+            "colId": "d1ad003b-38cf-4718-a293-56cf44bbfafe",
+            "containerId": "f9a02575-1e07-4ecc-982d-c3e8df5cc8e5",
+            "name": "list",
+            "url": "https://api.openai.com/v1/fine-tunes",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-07-29T01:08:50.118Z",
+            "modified": "2023-07-29T01:10:54.958Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "916e694a-f15b-451d-bf71-5f0a24a57bad",
+            "colId": "d1ad003b-38cf-4718-a293-56cf44bbfafe",
+            "containerId": "f9a02575-1e07-4ecc-982d-c3e8df5cc8e5",
+            "name": "retrieve",
+            "url": "https://api.openai.com/v1/fine-tunes/ft-lLBt0PtbBJZgwSk8yCQ7u0DD",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-07-29T01:08:50.119Z",
+            "modified": "2023-07-29T01:11:00.935Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "8fbdfb85-f1ba-4c6e-a6d1-beb476f83096",
+            "colId": "d1ad003b-38cf-4718-a293-56cf44bbfafe",
+            "containerId": "f9a02575-1e07-4ecc-982d-c3e8df5cc8e5",
+            "name": "cancelFileTune",
+            "url": "https://api.openai.com/v1/fine-tunes/ft-ygvB9qTrzexiwWIQYiKIrwvV/cancel",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-07-29T01:08:50.120Z",
+            "modified": "2023-07-29T01:11:07.672Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "f21e0f85-e658-4fa2-af4e-d475c6e7083f",
+            "colId": "d1ad003b-38cf-4718-a293-56cf44bbfafe",
+            "containerId": "f9a02575-1e07-4ecc-982d-c3e8df5cc8e5",
+            "name": "deleteFileTune",
+            "url": "https://api.openai.com/v1/models/{model}",
+            "method": "DELETE",
+            "sortNum": 80000,
+            "created": "2023-07-29T01:08:50.121Z",
+            "modified": "2023-07-29T01:11:12.830Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [
+                {
+                    "name": "model",
+                    "value": "",
+                    "isPath": true
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "a36117f1-a876-4e2c-9b88-7fb65eb5ce30",
+            "colId": "d1ad003b-38cf-4718-a293-56cf44bbfafe",
+            "containerId": "4eae5f82-f36f-45d9-a7f3-79f00bf9a2c9",
+            "name": "getModels",
+            "url": "https://api.openai.com/v1/models",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2023-07-29T01:08:50.122Z",
+            "modified": "2023-07-29T01:11:17.653Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "ff7d5fcb-581e-4eec-a234-98c40e483cd9",
+            "colId": "d1ad003b-38cf-4718-a293-56cf44bbfafe",
+            "containerId": "4eae5f82-f36f-45d9-a7f3-79f00bf9a2c9",
+            "name": "retrieveModel",
+            "url": "https://api.openai.com/v1/models/curie",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2023-07-29T01:08:50.123Z",
+            "modified": "2023-07-29T01:11:21.717Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "a5c4a79c-fe9c-4083-8997-494012c2cd97",
+            "colId": "d1ad003b-38cf-4718-a293-56cf44bbfafe",
+            "containerId": "3d85aff5-61f3-4a49-b4ab-656934d81d7e",
+            "name": "chatCompletions",
+            "url": "https://api.openai.com/v1/chat/completions",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2023-07-29T01:08:50.125Z",
+            "modified": "2023-07-29T01:11:27.269Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"model\": \"gpt-3.5-turbo\",\n  \"messages\": [{\"role\": \"assistant\", \"content\": \"Đối tác của công ty ABSoltech\"}]\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "85c2685d-3fe7-43b9-9dd1-fe8ff5550a3a",
+            "colId": "d1ad003b-38cf-4718-a293-56cf44bbfafe",
+            "containerId": "5dd2cc2a-a8f1-4abf-914b-95864f813869",
+            "name": "completions",
+            "url": "https://api.openai.com/v1/completions",
+            "method": "POST",
+            "sortNum": 120000,
+            "created": "2023-07-29T01:08:50.126Z",
+            "modified": "2023-07-29T01:11:58.711Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"model\": \"davinci:ft-absoltech:davinci-test-2023-07-28-07-06-25\",\n    \"prompt\": \"Giới thiệu về công ty ABSoltech\",\n    \"max_tokens\": 50\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        }
+    ]
 }
