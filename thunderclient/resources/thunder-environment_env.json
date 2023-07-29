@@ -1,12 +1,12 @@
 {
     "client": "Thunder Client",
     "environmentName": "env",
-    "dateExported": "2023-07-29T01:12:59.700Z",
+    "dateExported": "2023-07-29T01:49:01.569Z",
     "version": "1.0",
     "variables": [
         {
             "name": "token",
-            "value": "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"
+            "value": "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"
         }
     ]
 }
