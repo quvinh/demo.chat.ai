@@ -2,21 +2,21 @@ import { Configuration, OpenAIApi } from "openai";
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
+import "dotenv/config";
 
 const app = express();
-const port = 8000;
+const port = 2000;
 app.use(bodyParser.json());
 app.use(cors());
 
 const configuration = new Configuration({
-  // organization: "org-0nmrFWw6wSm6xIJXSbx4FpTw",
-  apiKey: "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",
+  apiKey: process.env.API_KEY_OPENAI,
 });
 const openai = new OpenAIApi(configuration);
 
 app.post("/", async (request, response) => {
   const { chats } = request.body;
-  console.log(chats)
+  console.log(chats);
   const result = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
     messages: [

@@ -19,7 +19,7 @@ function App() {
 
     setMessage("");
 
-    fetch("http://localhost:8000/", {
+    fetch("http://localhost:2000/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

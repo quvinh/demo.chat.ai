@@ -21,9 +21,9 @@ See the Video Tutorial: <br />
 * Navigate into the `backend` folder `cd backend`
 * Install the dependencies ``npm install``
 * Replace the configuration data with your own data in the `index.js` file
-* Run the `index.js` file `node index`
+* Run the server ``npm run start``
 
-*That will start the backend server on port `8000`: http://localhost:8000/*
+*That will start the backend server on port `2000`: http://localhost:2000/*
 
 * Navigate into the `frontend` folder `cd frontend`
 * Install the dependencies ``npm install``
