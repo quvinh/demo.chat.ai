@@ -14,8 +14,8 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-app.post("/", async (request, response) => {
-  const { chats } = request.body;
+app.post("/", async (req, res) => {
+  const { chats } = req.body;
   console.log(chats);
   const result = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
@@ -28,10 +28,24 @@ app.post("/", async (request, response) => {
     ],
   });
 
-  response.json({
+  res.json({
     output: result.data.choices[0].message,
   });
 });
+
+// -----
+
+app
+  .route("/files")
+  .get(async (req, res) => {
+    const openai = new OpenAIApi(configuration);
+    const result = await openai.listFiles();
+    const { data } = result;
+    res.json(data);
+  })
+  .post((req, res) => {
+    res.json({ message: "post files" });
+  });
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);

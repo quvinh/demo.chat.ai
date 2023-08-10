@@ -1,0 +1,55 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "backend",
+    "dateExported": "2023-08-10T10:22:18.550Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "0c2a3ba8-8bb3-4b2c-88cc-ff3cbb633a16",
+            "name": "Files",
+            "containerId": "",
+            "created": "2023-08-10T10:13:10.773Z",
+            "sortNum": 10000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "f3943de6-b92c-44ac-be9f-742c8a1437ea",
+            "colId": "ded39b8a-5603-405e-9209-929dad2589fb",
+            "containerId": "0c2a3ba8-8bb3-4b2c-88cc-ff3cbb633a16",
+            "name": "list",
+            "url": "{{api.base_url}}/files",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-08-10T09:25:22.152Z",
+            "modified": "2023-08-10T10:14:39.325Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4f18ab40-039e-4bf7-916b-37650bdbb5c4",
+            "colId": "ded39b8a-5603-405e-9209-929dad2589fb",
+            "containerId": "0c2a3ba8-8bb3-4b2c-88cc-ff3cbb633a16",
+            "name": "upload",
+            "url": "{{api.base_url}}/files",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-08-10T10:13:30.719Z",
+            "modified": "2023-08-10T10:14:35.085Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
