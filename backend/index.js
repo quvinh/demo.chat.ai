@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import "dotenv/config";
 
+const multer = require("multer");
 const app = express();
 const port = 2000;
 app.use(bodyParser.json());
@@ -13,6 +14,18 @@ const configuration = new Configuration({
   apiKey: process.env.API_KEY_OPENAI,
 });
 const openai = new OpenAIApi(configuration);
+
+// SET STORAGE
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads");
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + "-" + Date.now());
+  },
+});
+
+const upload = multer({ storage: storage });
 
 app.post("/", async (req, res) => {
   const { chats } = req.body;
@@ -43,8 +56,14 @@ app
     const { data } = result;
     res.json(data);
   })
-  .post((req, res) => {
-    res.json({ message: "post files" });
+  .post("/uploadfile", upload.single("myFile"), (req, res, next) => {
+    const file = req.file;
+    if (!file) {
+      const error = new Error("Please upload a file");
+      error.httpStatusCode = 400;
+      return next(error);
+    }
+    res.send(file);
   });
 
 app.listen(port, () => {
