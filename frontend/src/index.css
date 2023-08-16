@@ -19,12 +19,14 @@ html, body{
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 2.2em;
   line-height: 1.1;
   text-align: center;
   position: sticky;
   top: 0;
   background-color: #242424;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 main{
@@ -71,10 +73,17 @@ input{
   border: none;
   padding: 10px;
   font-size: 1.2rem;
-  background-color: rgb(28, 23, 23);
+  background-color: transparent;
   color: white;
 }
 
 input:focus{
   outline: none;
+}
+h1 {
+  margin-bottom: 20px;
+}
+
+.hide {
+  display: none;
 }
