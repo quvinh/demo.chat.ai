@@ -49,6 +49,7 @@ function App() {
     <div class="chat-box-position">
           <div className={`chat-window ${showChat ? "popuping" : "unpopup"}`}>
             <div className="chat-header">
+              <div class="button-close"  onClick={() => setShowChat(!showChat)}></div>
               <h1>ChatBot Demo</h1>
             </div>
             <div className="chat-body">
@@ -69,6 +70,7 @@ function App() {
             </div>
             <div className="chat-footer">
               <form onSubmit={(e) => chat(e, message)}>
+                <div class="form-group">
                 <input
                   type="text"
                   name="message"
@@ -76,6 +78,8 @@ function App() {
                   placeholder="Type a message here and hit Enter..."
                   onChange={(e) => setMessage(e.target.value)}
                 />
+                <button class="btn-send-mess"></button>
+                </div>
               </form>
             </div>
           </div> 
