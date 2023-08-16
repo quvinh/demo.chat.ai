@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import myImage from "../images/internet-bot-computer-icons-chatbot-clip-art-sticker.png"; 
 import "../chatbot.css"; // Hãy chắc chắn thay thế bằng đường dẫn thực tế đến tệp CSS của bạn
-
+import SendIcon from "../icons/sendicon";
 
 function App() {
   const [message, setMessage] = useState("");
@@ -75,10 +75,10 @@ function App() {
                   type="text"
                   name="message"
                   value={message}
-                  placeholder="Type a message here and hit Enter..."
+                  placeholder="Chat với bot..."
                   onChange={(e) => setMessage(e.target.value)}
                 />
-                <button class="btn-send-mess"></button>
+                <button class="button-submit-chat"><SendIcon /></button>
                 </div>
               </form>
             </div>
