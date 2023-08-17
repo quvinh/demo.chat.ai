@@ -34,13 +34,6 @@ main{
   margin: auto;
 }
 
-p{
-  background-color: darkslategray;
-  max-width: 70%;
-  padding: 15px;
-  border-radius: 50px;
-}
-
 p span{
   margin: 5px;
 }
@@ -49,12 +42,6 @@ p span:first-child{
   margin-right: 0;
 }
 
-.user_msg{
-  text-align: right;
-  margin-left: 30%;
-  display: flex;
-  flex-direction: row-reverse;
-}
 
 .hide {
   visibility: hidden;

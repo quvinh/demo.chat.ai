@@ -1,27 +1,28 @@
 import React, { useState, useEffect, useRef } from "react";
-import myImage from "../images/internet-bot-computer-icons-chatbot-clip-art-sticker.png"; 
+import avatarBot from "../public/images/internet-bot-computer-icons-chatbot-clip-art-sticker.png"; 
+import userAvatar from "../public/images/user-avatar2.png";
 import "../chatbot.css"; // Hãy chắc chắn thay thế bằng đường dẫn thực tế đến tệp CSS của bạn
-import SendIcon from "../icons/sendicon";
+import SendIcon from "../public/icons/sendicon";
+import IconClose from "../public/icons/iconClose";
 
 function App() {
   const [message, setMessage] = useState("");
   const [chats, setChats] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
   const [showChat, setShowChat] = useState(false);
-
+  const [messageTimestamps, setMessageTimestamps] = useState([]);
   const chat = async (e, message) => {
     e.preventDefault();
 
     if (!message) return;
     setIsTyping(true);
     scrollTo(0, 1e10);
-
     let msgs = chats;
-    msgs.push({ role: "user", content: message });
+    msgs.push({ role: "user", content: message});
     setChats(msgs);
-
     setMessage("");
-
+    const currentTime = new Date().getTime();
+    setMessageTimestamps(prevTimestamps => [...prevTimestamps, currentTime]);
     fetch("http://localhost:2000/", {
       method: "POST",
       headers: {
@@ -35,6 +36,8 @@ function App() {
       .then((data) => {
         msgs.push(data.output);
         setChats(msgs);
+        const currentTime = new Date().getTime();
+        setMessageTimestamps(prevTimestamps => [...prevTimestamps, currentTime]);
         setIsTyping(false);
         scrollTo(0, 1e10);
       })
@@ -43,29 +46,73 @@ function App() {
       });
   };
 
- 
 
   return (
     <div class="chat-box-position">
           <div className={`chat-window ${showChat ? "popuping" : "unpopup"}`}>
             <div className="chat-header">
-              <div class="button-close"  onClick={() => setShowChat(!showChat)}></div>
+              <div class="button-close"  onClick={() => setShowChat(!showChat)}>
+               <IconClose />
+              </div>
               <h1>ChatBot Demo</h1>
             </div>
             <div className="chat-body">
             {chats.map((chat, index) => (
-              <p key={index} className={chat.role === "user" ? "user_msg" : ""}>
-                <span>
-                  <b>{chat.role.toUpperCase()}</b>
-                </span>
-                <span>:</span>
-                <span>{chat.content}</span>
-              </p>
+              <div key={index} className= {`message-container ${chat.role === "user" ? "user_msg" : "bot_msg"}`}>
+                {chat.role === "user" ? (
+                      <>       
+                      <div className="message-timestamp-user">
+                       
+                          <p>Bạn: {new Date(messageTimestamps[index]).toLocaleTimeString()}</p>
+                   
+                      </div>
+                      <div class="wrap-message-user">         
+                        <div class="user-avatar-msg">
+                          <img src={userAvatar} width={25}/>
+                        </div>
+                        <div class="box-user-msg message-box">
+                          {chat.content}
+                        </div>
+                        </div> 
+                        {/* Đây là phần của div cho chat.role === "user" */}
+                      </>
+                    ) : (
+                      <>
+                      <div className="message-timestamp-chatbot">
+                       
+                       <p>Bot: {new Date(messageTimestamps[index]).toLocaleTimeString()}</p>
+                
+                   </div>
+                      <div class="wrap-message-chatbot">
+                       <div class="bot-avatar-msg">
+                          <img src={avatarBot}  width={25}/>
+                        </div>
+                        <div class="box-bot-msg message-box">
+                          {chat.content}
+                        </div>
+                        </div>
+                        {/* Đây là phần của div cho chat.role !== "user" */}
+                      </>
+                    )}
+              </div>
             ))}
-              <div className={isTyping ? "" : "hide"}>
-                <p>
-                  <i>{isTyping ? "Typing" : ""}</i>
-                </p>
+            
+            <div class={`message-container-loading bot_msg ${isTyping ? "" : "hide"}`}>
+              <div class={`bot-avatar-msg`}>
+                  <img src={avatarBot} width={25}/>
+              </div>
+               <div class="box-bot-msg message-box loading">
+                  {isTyping ? (
+                    <>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    </>
+                  ) : (
+                    <>
+                    </>
+                  )}
+              </div>
               </div>
             </div>
             <div className="chat-footer">
@@ -87,7 +134,7 @@ function App() {
 
        <div className={`chatbot-icon ${!showChat ? "hidden" : ""}`}>
         <button class="toggle-button-chatbot"  onClick={() => setShowChat(!showChat)}>
-          <div class="icon-chat-bot"> <img src={myImage} width={35} alt="Chatbot" /></div>      
+          <div class="icon-chat-bot"> <img src={avatarBot} width={35} alt="Chatbot" /></div>      
         </button>       
         </div>
 
