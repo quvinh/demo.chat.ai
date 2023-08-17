@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "backend",
-    "dateExported": "2023-08-16T08:52:19.941Z",
+    "dateExported": "2023-08-17T04:07:36.389Z",
     "version": "1.1",
     "folders": [
         {
@@ -24,6 +24,13 @@
             "containerId": "",
             "created": "2023-08-16T08:40:05.888Z",
             "sortNum": 20000
+        },
+        {
+            "_id": "2e3ccd5c-8651-48f8-82f1-20e1b2ed1e57",
+            "name": "Completions",
+            "containerId": "",
+            "created": "2023-08-17T02:53:13.750Z",
+            "sortNum": 30000
         }
     ],
     "requests": [
@@ -55,7 +62,7 @@
             "method": "GET",
             "sortNum": 7500,
             "created": "2023-08-16T08:49:28.511Z",
-            "modified": "2023-08-16T08:49:51.652Z",
+            "modified": "2023-08-17T04:00:10.979Z",
             "headers": [
                 {
                     "name": "Content-Type",
@@ -112,7 +119,7 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2023-08-16T08:40:05.888Z",
-            "modified": "2023-08-16T08:48:21.301Z",
+            "modified": "2023-08-17T04:06:06.394Z",
             "headers": [
                 {
                     "name": "Content-Type",
@@ -122,7 +129,31 @@
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"training_file\": \"file-PeUaIkGjrqzQP4jXrNj1uBK0\",\n  \"model\": \"davinci\"\n}",
+                "raw": "{\n  \"training_file\": \"file-PeUaIkGjrqzQP4jXrNj1uBK0\",\n  \"model\": \"davinci\",\n  \"n_epochs\": 15,\n\t\"batch_size\": 3,\n\t\"learning_rate_multiplier\": 0.3\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9948ff74-8b36-428f-aa73-21286880711b",
+            "colId": "ded39b8a-5603-405e-9209-929dad2589fb",
+            "containerId": "2e3ccd5c-8651-48f8-82f1-20e1b2ed1e57",
+            "name": "create",
+            "url": "{{api.base_url}}/completions",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-08-17T02:53:13.750Z",
+            "modified": "2023-08-17T03:56:50.058Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"model\": \"davinci:ft-personal-2023-08-16-09-30-58\",\n  \"prompt\": \"\"\n}",
                 "form": []
             },
             "tests": []
@@ -176,11 +207,11 @@
             "colId": "ded39b8a-5603-405e-9209-929dad2589fb",
             "containerId": "0c2a3ba8-8bb3-4b2c-88cc-ff3cbb633a16",
             "name": "retrieve",
-            "url": "{{api.base_url}}/files/file-KZ5aIyPnvg5V8e93geaqJ2kz",
+            "url": "{{api.base_url}}/files/file-3bz4F41qXxOoWuVFU4thLQ0z",
             "method": "GET",
             "sortNum": 30000,
             "created": "2023-08-16T07:34:11.315Z",
-            "modified": "2023-08-16T07:39:15.960Z",
+            "modified": "2023-08-17T04:01:50.121Z",
             "headers": [
                 {
                     "name": "Content-Type",
