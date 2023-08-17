@@ -1,28 +1,49 @@
 {
     "client": "Thunder Client",
     "collectionName": "backend",
-    "dateExported": "2023-08-10T10:22:18.550Z",
+    "dateExported": "2023-08-17T04:07:36.389Z",
     "version": "1.1",
     "folders": [
+        {
+            "_id": "cf15286b-23c2-4783-bf12-97f2f54e8301",
+            "name": "Chat",
+            "containerId": "",
+            "created": "2023-08-16T08:20:56.865Z",
+            "sortNum": 5000
+        },
         {
             "_id": "0c2a3ba8-8bb3-4b2c-88cc-ff3cbb633a16",
             "name": "Files",
             "containerId": "",
             "created": "2023-08-10T10:13:10.773Z",
             "sortNum": 10000
+        },
+        {
+            "_id": "e6cd3a38-04f4-42fd-a9bb-29d22b412214",
+            "name": "FineTunes",
+            "containerId": "",
+            "created": "2023-08-16T08:40:05.888Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "2e3ccd5c-8651-48f8-82f1-20e1b2ed1e57",
+            "name": "Completions",
+            "containerId": "",
+            "created": "2023-08-17T02:53:13.750Z",
+            "sortNum": 30000
         }
     ],
     "requests": [
         {
-            "_id": "f3943de6-b92c-44ac-be9f-742c8a1437ea",
+            "_id": "8446b318-c655-433e-bfdc-4d6522a05910",
             "colId": "ded39b8a-5603-405e-9209-929dad2589fb",
-            "containerId": "0c2a3ba8-8bb3-4b2c-88cc-ff3cbb633a16",
+            "containerId": "e6cd3a38-04f4-42fd-a9bb-29d22b412214",
             "name": "list",
-            "url": "{{api.base_url}}/files",
+            "url": "{{api.base_url}}/fine-tunes",
             "method": "GET",
-            "sortNum": 10000,
-            "created": "2023-08-10T09:25:22.152Z",
-            "modified": "2023-08-10T10:14:39.325Z",
+            "sortNum": 5000,
+            "created": "2023-08-16T08:48:47.169Z",
+            "modified": "2023-08-16T08:49:03.424Z",
             "headers": [
                 {
                     "name": "Content-Type",
@@ -33,15 +54,202 @@
             "tests": []
         },
         {
+            "_id": "fb66b93a-fb2b-443c-9306-14c02ca04963",
+            "colId": "ded39b8a-5603-405e-9209-929dad2589fb",
+            "containerId": "e6cd3a38-04f4-42fd-a9bb-29d22b412214",
+            "name": "retrieve",
+            "url": "{{api.base_url}}/fine-tunes/ft-G8HDASv1iiD01qos3tso5PVa",
+            "method": "GET",
+            "sortNum": 7500,
+            "created": "2023-08-16T08:49:28.511Z",
+            "modified": "2023-08-17T04:00:10.979Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f3943de6-b92c-44ac-be9f-742c8a1437ea",
+            "colId": "ded39b8a-5603-405e-9209-929dad2589fb",
+            "containerId": "0c2a3ba8-8bb3-4b2c-88cc-ff3cbb633a16",
+            "name": "list",
+            "url": "{{api.base_url}}/files",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-08-10T09:25:22.152Z",
+            "modified": "2023-08-16T07:38:40.766Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "652823f7-9d32-4841-b241-64f5711fa9bb",
+            "colId": "ded39b8a-5603-405e-9209-929dad2589fb",
+            "containerId": "cf15286b-23c2-4783-bf12-97f2f54e8301",
+            "name": "createChat",
+            "url": "{{api.base_url}}/chat",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-08-16T08:21:12.447Z",
+            "modified": "2023-08-16T08:43:08.616Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3d711e37-850f-4183-be94-6c71ca21b91e",
+            "colId": "ded39b8a-5603-405e-9209-929dad2589fb",
+            "containerId": "e6cd3a38-04f4-42fd-a9bb-29d22b412214",
+            "name": "create",
+            "url": "{{api.base_url}}/fine-tunes",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-08-16T08:40:05.888Z",
+            "modified": "2023-08-17T04:06:06.394Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"training_file\": \"file-PeUaIkGjrqzQP4jXrNj1uBK0\",\n  \"model\": \"davinci\",\n  \"n_epochs\": 15,\n\t\"batch_size\": 3,\n\t\"learning_rate_multiplier\": 0.3\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9948ff74-8b36-428f-aa73-21286880711b",
+            "colId": "ded39b8a-5603-405e-9209-929dad2589fb",
+            "containerId": "2e3ccd5c-8651-48f8-82f1-20e1b2ed1e57",
+            "name": "create",
+            "url": "{{api.base_url}}/completions",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-08-17T02:53:13.750Z",
+            "modified": "2023-08-17T03:56:50.058Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"model\": \"davinci:ft-personal-2023-08-16-09-30-58\",\n  \"prompt\": \"\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
             "_id": "4f18ab40-039e-4bf7-916b-37650bdbb5c4",
             "colId": "ded39b8a-5603-405e-9209-929dad2589fb",
             "containerId": "0c2a3ba8-8bb3-4b2c-88cc-ff3cbb633a16",
             "name": "upload",
-            "url": "{{api.base_url}}/files",
+            "url": "{{api.base_url}}/files/upload",
             "method": "POST",
             "sortNum": 20000,
             "created": "2023-08-10T10:13:30.719Z",
-            "modified": "2023-08-10T10:14:35.085Z",
+            "modified": "2023-08-16T07:23:46.133Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [],
+                "files": [
+                    {
+                        "name": "file",
+                        "value": "d:\\Admin\\OpenAI\\react-nodejs-chatgpt-tutorial\\myData_prepared.jsonl"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "24da6695-bbcb-4761-a2a2-21c0be328d8b",
+            "colId": "ded39b8a-5603-405e-9209-929dad2589fb",
+            "containerId": "e6cd3a38-04f4-42fd-a9bb-29d22b412214",
+            "name": "cancel",
+            "url": "{{api.base_url}}/fine-tunes/ft-zzvLP617SDt7FL0QMO1QDVbM/cancel",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-08-16T08:50:11.556Z",
+            "modified": "2023-08-16T08:50:48.873Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "368583a8-be86-453a-bed7-3fd441fb3f6d",
+            "colId": "ded39b8a-5603-405e-9209-929dad2589fb",
+            "containerId": "0c2a3ba8-8bb3-4b2c-88cc-ff3cbb633a16",
+            "name": "retrieve",
+            "url": "{{api.base_url}}/files/file-3bz4F41qXxOoWuVFU4thLQ0z",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-08-16T07:34:11.315Z",
+            "modified": "2023-08-17T04:01:50.121Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d58b5cb2-f592-41f7-8fa3-afc3a1bcecac",
+            "colId": "ded39b8a-5603-405e-9209-929dad2589fb",
+            "containerId": "0c2a3ba8-8bb3-4b2c-88cc-ff3cbb633a16",
+            "name": "retrieveContent",
+            "url": "{{api.base_url}}/files/file-KZ5aIyPnvg5V8e93geaqJ2kz/content",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-08-16T07:40:01.694Z",
+            "modified": "2023-08-16T07:41:58.256Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "42f84247-3ed6-425e-a315-a4fbda2b4ad4",
+            "colId": "ded39b8a-5603-405e-9209-929dad2589fb",
+            "containerId": "0c2a3ba8-8bb3-4b2c-88cc-ff3cbb633a16",
+            "name": "delete",
+            "url": "{{api.base_url}}/files/file-sffMxqBUtVdrmG92aUZIF8iF",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-08-16T07:43:47.894Z",
+            "modified": "2023-08-16T08:05:21.424Z",
             "headers": [
                 {
                     "name": "Content-Type",

@@ -23,7 +23,7 @@ function App() {
     setMessage("");
     const currentTime = new Date().getTime();
     setMessageTimestamps(prevTimestamps => [...prevTimestamps, currentTime]);
-    fetch("http://localhost:2000/", {
+    fetch("http://localhost:2000/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -48,10 +48,10 @@ function App() {
 
 
   return (
-    <div class="chat-box-position">
+    <div className="chat-box-position">
           <div className={`chat-window ${showChat ? "popuping" : "unpopup"}`}>
             <div className="chat-header">
-              <div class="button-close"  onClick={() => setShowChat(!showChat)}>
+              <div className="button-close"  onClick={() => setShowChat(!showChat)}>
                <IconClose />
               </div>
               <h1>ChatBot Demo</h1>
@@ -66,11 +66,11 @@ function App() {
                           <p>Bạn: {new Date(messageTimestamps[index]).toLocaleTimeString()}</p>
                    
                       </div>
-                      <div class="wrap-message-user">         
-                        <div class="user-avatar-msg">
+                      <div className="wrap-message-user">         
+                        <div className="user-avatar-msg">
                           <img src={userAvatar} width={25}/>
                         </div>
-                        <div class="box-user-msg message-box">
+                        <div className="box-user-msg message-box">
                           {chat.content}
                         </div>
                         </div> 
@@ -83,25 +83,25 @@ function App() {
                        <p>Bot: {new Date(messageTimestamps[index]).toLocaleTimeString()}</p>
                 
                    </div>
-                      <div class="wrap-message-chatbot">
-                       <div class="bot-avatar-msg">
+                      <div className="wrap-message-chatbot">
+                       <div className="bot-avatar-msg">
                           <img src={avatarBot}  width={25}/>
                         </div>
-                        <div class="box-bot-msg message-box">
+                        <div className="box-bot-msg message-box">
                           {chat.content}
                         </div>
                         </div>
-                        {/* Đây là phần của div cho chat.role !== "user" */}
+                        {/* Đây là phần của div cho chat.role == "bot" */}
                       </>
                     )}
               </div>
             ))}
             
-            <div class={`message-container-loading bot_msg ${isTyping ? "" : "hide"}`}>
-              <div class={`bot-avatar-msg`}>
+            <div className={`message-container-loading bot_msg ${isTyping ? "" : "hide"}`}>
+              <div className={`bot-avatar-msg`}>
                   <img src={avatarBot} width={25}/>
               </div>
-               <div class="box-bot-msg message-box loading">
+               <div className="box-bot-msg message-box loading">
                   {isTyping ? (
                     <>
                     <span></span>
@@ -117,7 +117,7 @@ function App() {
             </div>
             <div className="chat-footer">
               <form onSubmit={(e) => chat(e, message)}>
-                <div class="form-group">
+                <div className="form-group">
                 <input
                   type="text"
                   name="message"
@@ -125,7 +125,7 @@ function App() {
                   placeholder="Chat với bot..."
                   onChange={(e) => setMessage(e.target.value)}
                 />
-                <button class="button-submit-chat"><SendIcon /></button>
+                <button className="button-submit-chat"><SendIcon /></button>
                 </div>
               </form>
             </div>
@@ -133,8 +133,8 @@ function App() {
       
 
        <div className={`chatbot-icon ${!showChat ? "hidden" : ""}`}>
-        <button class="toggle-button-chatbot"  onClick={() => setShowChat(!showChat)}>
-          <div class="icon-chat-bot"> <img src={avatarBot} width={35} alt="Chatbot" /></div>      
+        <button className="toggle-button-chatbot"  onClick={() => setShowChat(!showChat)}>
+          <div className="icon-chat-bot"> <img src={avatarBot} width={35} alt="Chatbot" /></div>      
         </button>       
         </div>
 
