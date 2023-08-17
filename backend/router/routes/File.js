@@ -27,30 +27,38 @@ const upload = multer({ storage: storage });
  * @description: list files
  */
 fileRouter.get("/", async (req, res) => {
-  const openai = new OpenAIApi(configuration);
-  const result = await openai.listFiles();
-  const { data } = result;
-  res.json(data);
+  try {
+    const openai = new OpenAIApi(configuration);
+    const result = await openai.listFiles();
+    const { data } = result;
+    res.json(data);
+  } catch (error) {
+    res.json(error);
+  }
 });
 
 /**
  * @description: upload file
  */
 fileRouter.post("/upload", upload.single("file"), async (req, res, next) => {
-  const file = req.file;
+  try {
+    const file = req.file;
 
-  if (!file) {
-    const error = new Error("Please upload a file");
-    error.httpStatusCode = 400;
-    return next(error);
+    if (!file) {
+      const error = new Error("Please upload a file");
+      error.httpStatusCode = 400;
+      return next(error);
+    }
+    const path = file.path;
+    // Handle upload to openAi - file.jsonl
+    const response = await openai.createFile(
+      fs.createReadStream(path),
+      "fine-tune"
+    );
+    res.json(response.data);
+  } catch (error) {
+    res.json(error);
   }
-  const path = file.path;
-  // Handle upload to openAi - file.jsonl
-  const response = await openai.createFile(
-    fs.createReadStream(path),
-    "fine-tune"
-  );
-  res.json(response.data);
 });
 
 /**
@@ -58,8 +66,12 @@ fileRouter.post("/upload", upload.single("file"), async (req, res, next) => {
  * @param: file_id
  */
 fileRouter.get("/:file_id", async (req, res) => {
-  const response = await openai.retrieveFile(req.params.file_id);
-  res.json(response.data);
+  try {
+    const response = await openai.retrieveFile(req.params.file_id);
+    res.json(response.data);
+  } catch (error) {
+    res.json(error);
+  }
 });
 
 /**
@@ -67,8 +79,12 @@ fileRouter.get("/:file_id", async (req, res) => {
  * @param: file_id
  */
 fileRouter.get("/:file_id/content", async (req, res) => {
-  const response = await openai.downloadFile(req.params.file_id);
-  res.json(response.data);
+  try {
+    const response = await openai.downloadFile(req.params.file_id);
+    res.json(response.data);
+  } catch (error) {
+    res.json(error);
+  }
 });
 
 /**
@@ -76,8 +92,12 @@ fileRouter.get("/:file_id/content", async (req, res) => {
  * @param: file_id
  */
 fileRouter.delete("/:file_id", async (req, res) => {
-  const response = await openai.deleteFile(req.params.file_id);
-  res.json(response.data);
+  try {
+    const response = await openai.deleteFile(req.params.file_id);
+    res.json(response.data);
+  } catch (error) {
+    res.json(error);
+  }
 });
 
 export default fileRouter;

@@ -3,7 +3,7 @@ import cors from "cors";
 import express from "express";
 
 import "dotenv/config";
-import { chatRouter, fileRouter, fineTuneRouter } from "./router";
+import { chatRouter, fileRouter, fineTuneRouter, completionRouter } from "./router";
 
 const app = express();
 const port = 2000;
@@ -16,6 +16,7 @@ app.use(cors());
 app.use("/chat", chatRouter);
 app.use("/files", fileRouter);
 app.use("/fine-tunes", fineTuneRouter);
+app.use("/completions", completionRouter);
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
