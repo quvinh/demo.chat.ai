@@ -35,7 +35,7 @@ export default function File() {
           </thead>
           <tbody>
             {
-                selectedFile.map((file, index) => (
+                selectedFile.length > 0 ? selectedFile.map((file, index) => (
                     <tr key={index}>
                         <td>
                             {index}
@@ -44,12 +44,8 @@ export default function File() {
                             {file.name}
                         </td>
                     </tr>
-                ))
+                )) : 'Chưa upload file'
             }
-            {/* <tr>
-              <td>1</td>
-              <td>File 1</td>
-            </tr> */}
           </tbody>
         </table>
       </div>
