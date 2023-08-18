@@ -5,7 +5,7 @@ export default function File() {
 
   const handleFileChange = (event) => {
     const uploadFiles = Array.from(event.target.files);
-    setSelectedFile([... selectedFile, ...uploadFiles]);
+    setSelectedFile([...selectedFile, ...uploadFiles]);
   };
 
   const handleUpload = () => {
@@ -34,18 +34,14 @@ export default function File() {
             </tr>
           </thead>
           <tbody>
-            {
-                selectedFile.length > 0 ? selectedFile.map((file, index) => (
-                    <tr key={index}>
-                        <td>
-                            {index}
-                        </td>
-                        <td>
-                            {file.name}
-                        </td>
-                    </tr>
-                )) : 'Chưa upload file'
-            }
+            {selectedFile.length > 0
+              ? selectedFile.map((file, index) => (
+                  <tr key={index}>
+                    <td>{index}</td>
+                    <td>{file.name}</td>
+                  </tr>
+                ))
+              : "Chưa upload file"}
           </tbody>
         </table>
       </div>

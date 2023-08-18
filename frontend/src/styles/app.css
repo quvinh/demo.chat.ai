@@ -39,7 +39,7 @@
   flex-direction: column;
 }
 .main .file__tab .file__tab__top .file__tab__top__upload {
-  background: #279EFF;
+  background: #279eff;
   border: none;
   border-radius: 20px;
   padding: 1rem 2rem;
@@ -71,4 +71,31 @@
 }
 .main .file__tab .file__tab__middle table tbody tr td:first-child {
   text-align: center;
+}
+.main .fine-tunes__tab .fine-tunes__tab__top {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.main .fine-tunes__tab .fine-tunes__middle {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.main .fine-tunes__tab .fine-tunes__middle table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-y: auto;
+}
+.main .fine-tunes__tab .fine-tunes__middle table thead tr th {
+  border: 3px solid;
+}
+.main .fine-tunes__tab .fine-tunes__middle table tbody tr td {
+  border: 3px solid;
+  text-align: center;
+}
+.main .fine-tunes__tab .fine-tunes__middle table tbody tr td .fine-tunes-status {
+  font-weight: 700;
+  color: green;
 }/*# sourceMappingURL=app.css.map */
