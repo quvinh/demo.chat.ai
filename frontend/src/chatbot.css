@@ -65,15 +65,13 @@ button.toggle-button-chatbot{
   background-color: darkslategray;
 }
 .chat-box-position .unpopup {
-  opacity: 0;
-  transform: translateY(15px);
-  transition: all .7s;
+ display: none;
 }
-.chat-box-position .popuping {
+/* .chat-box-position .popuping {
   opacity: 1;
   transform: translateY(0);
   transition: all .7s;
-}
+} */
 /* Chat window */
 .chat-window {
   max-width: calc(100% - (20px + 20px ) );
@@ -86,6 +84,7 @@ button.toggle-button-chatbot{
   margin: 0px 20px 0px 20px;
   display: flex;
   flex-direction: column;
+  animation: 1s ease 0s 1 normal both running slide_up;
 }
 
 /* Chat header */
@@ -159,7 +158,28 @@ justify-content: space-between;
   color: #242424;
   flex-basis: 85%;
 }
+@keyframes slide_up {
+  0% {
+      opacity: 0;
+      transform: translateY(10px)
+  }
 
+  100% {
+      opacity: 1;
+      transform: translateY(0)
+  }
+}
+@keyframes slide_down {
+  0% {
+      opacity: 0;
+      transform: translateY(-10px)
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0)
+  }
+}
 @keyframes helper-aura-small-ring {
     0% {
         opacity: 0;

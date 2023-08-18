@@ -11,6 +11,7 @@ function App() {
   const [isTyping, setIsTyping] = useState(false);
   const [showChat, setShowChat] = useState(false);
   const [messageTimestamps, setMessageTimestamps] = useState([]);
+  const lastMessageRef = useRef(null);
   const chat = async (e, message) => {
     e.preventDefault();
 
@@ -45,6 +46,11 @@ function App() {
         console.log(error);
       });
   };
+  useEffect(() => {
+    if (lastMessageRef.current) {
+      lastMessageRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [lastMessageRef.current]);
 
 
   return (
@@ -58,7 +64,7 @@ function App() {
             </div>
             <div className="chat-body">
             {chats.map((chat, index) => (
-              <div key={index} className= {`message-container ${chat.role === "user" ? "user_msg" : "bot_msg"}`}>
+              <div key={index} className= {`message-container ${chat.role === "user" ? "user_msg" : "bot_msg"}`} ref={index === chats.length - 1 ? lastMessageRef : null}>
                 {chat.role === "user" ? (
                       <>       
                       <div className="message-timestamp-user">
