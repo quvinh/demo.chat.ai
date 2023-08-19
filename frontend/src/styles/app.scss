@@ -27,7 +27,79 @@
       box-shadow: 5px 5px 1px 1px rgb(235, 231, 231);
     }
   }
+  .container {
+    max-width: 1280px;
+    margin: 0px auto;
+  }
+  .wrapp-screen__fine-tunes {
+    display: flex;
+    flex-direction: column;
+    .box-create-list__fine-tunes {
+      display: flex;
+      flex-direction: column;
+      margin-top: 50px;
+      .form-input__create__finetuning {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .form-group {
+          display: flex;
+           gap: 10px;
+           align-items: flex-end;
+          label {
+            font-size: 18px;
+            font-weight: 100;
+            text-transform: uppercase;
+            letter-spacing: 0px;         
+          }
+        }
+        .btn-submit__create {
+          button {
+            padding: 10px 15px 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            border-style: none;
+          }
+        }
+        .input-model__fine-tunning {
+          select {
+            padding: 10px;
+            width: 10%;
+            border-radius: 5px;
+          }
+        }
+        .input-id__fine-tuning {
+          input {
+            background-color: #fff;
+            color: black;
+            height: 25px;
+            width: 35%;
+            display: inline-block;
+            border-radius: 5px;
+          }
+        }
+      }
+      .box-create__fine-tunes {
+      border: 1px solid #324444;
+      padding: 20px 40px 20px 40px;
+      }
+    }
+    .box-list__fine-tunes {
+      .table {
+        border-collapse: collapse;
+        width: 100%;
+        th, td{
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: left;
+        }
+        .table th {
+          background-color: #f2f2f2;
+        }
+      }
 
+    }
+  }
   // File
   .tab {
     margin-top: 20px;
@@ -62,6 +134,47 @@
       display: flex;
       justify-content: center;
       padding: 1rem;
+      .box-comfirm__delete-file {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+        p {
+          margin-bottom: 10px;
+        }
+        button {
+          margin-right: 10px;
+          padding: 5px 10px;
+          background-color: #f44336;
+          color: white;
+          border: none;
+          cursor: pointer;
+        }
+        .button.cancel {
+          background-color: #ccc;
+        }
+        /* Add animation for popup */
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        .fade-in {
+          animation: fadeIn 0.3s ease-in-out;
+        }
+      }
+      .btn-action__delete-file {
+        cursor: pointer;
+      }
       table {
         width: 100%;
         border-collapse: collapse;
@@ -253,4 +366,5 @@
 
     // }
   }
+  
 }

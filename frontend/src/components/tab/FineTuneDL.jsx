@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import "../../styles/app.scss"
 export default function FineTuning() {
   const [trainingFileId, setTrainingFileId] = useState("");
   const [model, setModel] = useState("davinci");
@@ -12,11 +12,9 @@ export default function FineTuning() {
   const fetchFineTunes = async () => {
     try {
       const response = await axios.get("http://localhost:2000/fine-tunes");
-      const filteredFineTunes = response.data.data.filter(
-        (item) => item.fine_tuned_model
-      );
-      setFineTunes(filteredFineTunes);
-      console.log(filteredFineTunes);
+      const FineTunes = response.data.data
+      setFineTunes(FineTunes);
+      console.log(FineTunes);
     } catch (error) {
       console.error("Error fetching fine-tunes:", error);
     }
@@ -33,17 +31,14 @@ export default function FineTuning() {
       };
 
       try {
-        const response = await axios.post(
-          "http://localhost:2000/fine-tunes",
-          data
-        );
-        setResponseMessage("Fine-tuning model created successfully");
+        const response = await axios.post("http://localhost:2000/fine-tunes", data);
+        setResponseMessage("Fine-tuning model được tạo thành công!");
       } catch (error) {
-        console.error("Error creating fine-tuning model:", error);
+        console.error("Lỗi khi tạo fine-tuning model:", error);
         setResponseMessage("Error creating fine-tuning model");
       }
     } else {
-      setResponseMessage("Please enter the training file ID");
+      setResponseMessage("Vui lòng nhật ID của file mà bạn muốn tạo!");
     }
   };
   const handleGenerate = async () => {
@@ -89,7 +84,7 @@ export default function FineTuning() {
       </div>
       <h2>List of Fine-Tunes</h2>
       <div className="list-file-tunes">
-        <table>
+        <table class="table">
           <thead>
             <tr>
               <th>STT</th>
@@ -116,6 +111,9 @@ export default function FineTuning() {
           </tbody>
         </table>
       </div>
+      </div>
+      </div>
+      <div className="box-chat__completion">
       <h2>Completion Chat</h2>
       <div className="fine-tunes__tab-completion">
         <div className="fine-tunes__tab-completion-title">
@@ -149,6 +147,7 @@ export default function FineTuning() {
       <div className="fine-tunes__tab-response">
         <h3>Response:</h3>
         <p>{response}</p>
+      </div>
       </div>
     </div>
   );
