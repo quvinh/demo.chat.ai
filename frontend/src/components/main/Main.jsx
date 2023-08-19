@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import File from "../tab/File";
 import FineTune from "../tab/FireTune";
-
+import FineTuneDL from "../tab/FineTuneDL";
 export default function Main() {
   const [activeTab, setActiveTab] = useState(null);
 
@@ -28,7 +28,7 @@ export default function Main() {
           </button>
       </div>
       {activeTab === 'file' && <File />}
-      {activeTab === 'fine-tunes' && <FineTune />}
+      {activeTab === 'fine-tunes' && <FineTuneDL />}
     </div>
   );
 }

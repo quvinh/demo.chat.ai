@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import avatarBot from "../public/images/internet-bot-computer-icons-chatbot-clip-art-sticker.png"; 
 import userAvatar from "../public/images/user-avatar2.png";
-import "../chatbot.css"; // Hãy chắc chắn thay thế bằng đường dẫn thực tế đến tệp CSS của bạn
+import "../styles/chatbot.css"; // Hãy chắc chắn thay thế bằng đường dẫn thực tế đến tệp CSS của bạn
 import SendIcon from "../public/icons/sendicon";
 import IconClose from "../public/icons/iconClose";
 
