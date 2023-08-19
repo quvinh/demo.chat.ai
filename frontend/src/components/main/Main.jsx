@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import File from "../tab/File";
-import FineTune from "../tab/FireTune";
+// import FineTune from "../tab/FireTune";
 import FineTuneDL from "../tab/FineTuneDL";
 export default function Main() {
   const [activeTab, setActiveTab] = useState(null);

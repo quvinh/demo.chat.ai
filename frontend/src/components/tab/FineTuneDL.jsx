@@ -12,14 +12,16 @@ export default function FineTuning() {
   const fetchFineTunes = async () => {
     try {
       const response = await axios.get("http://localhost:2000/fine-tunes");
-      const filteredFineTunes = response.data.data.filter((item) => item.fine_tuned_model);
+      const filteredFineTunes = response.data.data.filter(
+        (item) => item.fine_tuned_model
+      );
       setFineTunes(filteredFineTunes);
       console.log(filteredFineTunes);
     } catch (error) {
       console.error("Error fetching fine-tunes:", error);
     }
   };
-  
+
   useEffect(() => {
     fetchFineTunes();
   }, []);
@@ -31,7 +33,10 @@ export default function FineTuning() {
       };
 
       try {
-        const response = await axios.post("http://localhost:2000/fine-tunes", data);
+        const response = await axios.post(
+          "http://localhost:2000/fine-tunes",
+          data
+        );
         setResponseMessage("Fine-tuning model created successfully");
       } catch (error) {
         console.error("Error creating fine-tuning model:", error);
@@ -55,25 +60,33 @@ export default function FineTuning() {
     }
   };
   return (
-    <div>
-      <h2>Create Fine-Tuning Model</h2>
-      <label>
-        Training File ID:
-        <input
-          type="text"
-          value={trainingFileId}
-          onChange={(e) => setTrainingFileId(e.target.value)}
-        />
-      </label>
-      <label>
-        Model:
-        <select value={model} onChange={(e) => setModel(e.target.value)}>
-          <option value="davinci">davinci</option>
-          {/* Add other model options here */}
-        </select>
-      </label>
-      <button onClick={handleCreateFineTuning}>Create Fine-Tuning Model</button>
-      <p>{responseMessage}</p>
+    <div className="fine-tunes__tab tab">
+      <div className="fine-tunes__tab__top">
+        <h2 className="fine-tunes__tab__top-title">Create Fine-Tuning Model</h2>
+      </div>
+      <div className="fine-tunes__tab__middle">
+        <div className="fine-tunes__tab__middle-create">
+          <label className="fine-tunes__tab__middle-create-title">
+            Training File ID:
+            <input
+              type="text"
+              value={trainingFileId}
+              onChange={(e) => setTrainingFileId(e.target.value)}
+            />
+          </label>
+          <label className="fine-tunes__tab__middle-create-title">
+            Model:
+            <select value={model} onChange={(e) => setModel(e.target.value)}>
+              <option value="davinci">davinci</option>
+              {/* Add other model options here */}
+            </select>
+          </label>
+          <button onClick={handleCreateFineTuning}>
+            Create Fine-Tuning Model
+          </button>
+          <p className="fine-tunes__tab__middle-response">{responseMessage}</p>
+        </div>
+      </div>
       <h2>List of Fine-Tunes</h2>
       <div className="list-file-tunes">
         <table>
@@ -88,42 +101,52 @@ export default function FineTuning() {
             </tr>
           </thead>
           <tbody>
-          {fineTunes.map((fineTune, index) => (
-          <tr key={fineTune.file_id}>
-          <td>{index + 1}</td>
-          <td>{fineTune.object}</td>
-          <td>{fineTune.id}</td>
-          <td>{fineTune.fine_tuned_model}</td>
-          <td>{fineTune.model}</td>
-          <td>{fineTune.status}</td>
-        </tr>
-        ))}
+            {fineTunes.map((fineTune, index) => (
+              <tr key={fineTune.file_id}>
+                <td>{index + 1}</td>
+                <td>{fineTune.object}</td>
+                <td>{fineTune.id}</td>
+                <td>{fineTune.fine_tuned_model}</td>
+                <td>{fineTune.model}</td>
+                <td>
+                  <span>{fineTune.status}</span>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
       <h2>Completion Chat</h2>
-      <label>
-      Fine-Tune Model:
-        <select
-          value={selectedFineTune}
-          onChange={(e) => setSelectedFineTune(e.target.value)}
+      <div className="fine-tunes__tab-completion">
+        <div className="fine-tunes__tab-completion-title">
+          <label>Fine-Tune Model:</label>
+          <select
+            value={selectedFineTune}
+            onChange={(e) => setSelectedFineTune(e.target.value)}
+          >
+            <option value="">Select a Fine-Tune Model</option>
+            {fineTunes.map((fineTune) => (
+              <option key={fineTune.id} value={fineTune.fine_tuned_model}>
+                {fineTune.fine_tuned_model}
+              </option>
+            ))}
+          </select>
+        </div>
+        <textarea
+          className="fine-tunes__tab-completion-chat"
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+          rows={5}
+          cols={50}
+        ></textarea>
+        <button
+          className="fine-tunes__tab-completion-send-chat"
+          onClick={handleGenerate}
         >
-          <option value="">Select a Fine-Tune Model</option>
-          {fineTunes.map((fineTune) => (
-            <option key={fineTune.id} value={fineTune.fine_tuned_model}>
-              {fineTune.fine_tuned_model}
-            </option>
-          ))}
-        </select>
-      </label>
-      <textarea
-        value={prompt}
-        onChange={(e) => setPrompt(e.target.value)}
-        rows={5}
-        cols={50}
-      ></textarea>
-      <button onClick={handleGenerate}>Generate</button>
-      <div>
+          Generate
+        </button>
+      </div>
+      <div className="fine-tunes__tab-response">
         <h3>Response:</h3>
         <p>{response}</p>
       </div>
