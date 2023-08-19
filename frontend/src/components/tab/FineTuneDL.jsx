@@ -19,7 +19,7 @@ export default function FineTuning() {
       console.error("Error fetching fine-tunes:", error);
     }
   };
-  
+
   useEffect(() => {
     fetchFineTunes();
   }, []);
@@ -55,39 +55,34 @@ export default function FineTuning() {
     }
   };
   return (
-    <div className="wrapp-screen__fine-tunes container">
-      <div class="box-create-list__fine-tunes">
-      <div className="box-create__fine-tunes">
-        <div class="title__heading title-tab__fine-tuning">
-        <h2>Tạo Fine-Tuning Model</h2>
+    <div className="fine-tunes__tab tab">
+      <div className="fine-tunes__tab__top">
+        <h2 className="fine-tunes__tab__top-title">Create Fine-Tuning Model</h2>
+      </div>
+      <div className="fine-tunes__tab__middle">
+        <div className="fine-tunes__tab__middle-create">
+          <label className="fine-tunes__tab__middle-create-title">
+            Training File ID:
+            <input
+              type="text"
+              value={trainingFileId}
+              onChange={(e) => setTrainingFileId(e.target.value)}
+            />
+          </label>
+          <label className="fine-tunes__tab__middle-create-title">
+            Model:
+            <select value={model} onChange={(e) => setModel(e.target.value)}>
+              <option value="davinci">davinci</option>
+              {/* Add other model options here */}
+            </select>
+          </label>
+          <button onClick={handleCreateFineTuning}>
+            Create Fine-Tuning Model
+          </button>
+          <p className="fine-tunes__tab__middle-response">{responseMessage}</p>
         </div>
-    <div class="form-input__create__finetuning">
-      <div class="form-group input-id__fine-tuning">
-      <label>Training File ID:</label>
-        <input
-          type="text"
-          value={trainingFileId}
-          onChange={(e) => setTrainingFileId(e.target.value)}
-        />
-      
       </div>
-      <div class="form-group input-model__fine-tunning">
-      <label>Model:</label>
-        <select value={model} onChange={(e) => setModel(e.target.value)}>
-          <option value="davinci">davinci</option>
-          {/* Add other model options here */}
-        </select>
-        </div>
-      <div class="btn-submit__create">
-      <button onClick={handleCreateFineTuning}>Create Fine-Tuning Model</button>
-      <p>{responseMessage}</p>
-      </div>
-      </div>
-      </div>
-      <div class="box-list__fine-tunes">
-      <div class="title__heading title-tab__fine-tuning">
-      <h2>Danh sách Fine-Tunes</h2>
-      </div>
+      <h2>List of Fine-Tunes</h2>
       <div className="list-file-tunes">
         <table class="table">
           <thead>
@@ -101,16 +96,18 @@ export default function FineTuning() {
             </tr>
           </thead>
           <tbody>
-          {fineTunes.map((fineTune, index) => (
-          <tr key={fineTune.file_id}>
-          <td>{index + 1}</td>
-          <td>{fineTune.object}</td>
-          <td>{fineTune.id}</td>
-          <td>{fineTune.fine_tuned_model}</td>
-          <td>{fineTune.model}</td>
-          <td>{fineTune.status}</td>
-        </tr>
-        ))}
+            {fineTunes.map((fineTune, index) => (
+              <tr key={fineTune.file_id}>
+                <td>{index + 1}</td>
+                <td>{fineTune.object}</td>
+                <td>{fineTune.id}</td>
+                <td>{fineTune.fine_tuned_model}</td>
+                <td>{fineTune.model}</td>
+                <td>
+                  <span>{fineTune.status}</span>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
@@ -118,28 +115,36 @@ export default function FineTuning() {
       </div>
       <div className="box-chat__completion">
       <h2>Completion Chat</h2>
-      <label>
-      Fine-Tune Model:
-        <select
-          value={selectedFineTune}
-          onChange={(e) => setSelectedFineTune(e.target.value)}
+      <div className="fine-tunes__tab-completion">
+        <div className="fine-tunes__tab-completion-title">
+          <label>Fine-Tune Model:</label>
+          <select
+            value={selectedFineTune}
+            onChange={(e) => setSelectedFineTune(e.target.value)}
+          >
+            <option value="">Select a Fine-Tune Model</option>
+            {fineTunes.map((fineTune) => (
+              <option key={fineTune.id} value={fineTune.fine_tuned_model}>
+                {fineTune.fine_tuned_model}
+              </option>
+            ))}
+          </select>
+        </div>
+        <textarea
+          className="fine-tunes__tab-completion-chat"
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+          rows={5}
+          cols={50}
+        ></textarea>
+        <button
+          className="fine-tunes__tab-completion-send-chat"
+          onClick={handleGenerate}
         >
-          <option value="">Select a Fine-Tune Model</option>
-          {fineTunes.filter((item) => item.fine_tuned_model).map((fineTune) => (
-            <option key={fineTune.id} value={fineTune.fine_tuned_model}>
-              {fineTune.fine_tuned_model}
-            </option>
-          ))}
-        </select>
-      </label>
-      <textarea
-        value={prompt}
-        onChange={(e) => setPrompt(e.target.value)}
-        rows={5}
-        cols={50}
-      ></textarea>
-      <button onClick={handleGenerate}>Generate</button>
-      <div>
+          Generate
+        </button>
+      </div>
+      <div className="fine-tunes__tab-response">
         <h3>Response:</h3>
         <p>{response}</p>
       </div>

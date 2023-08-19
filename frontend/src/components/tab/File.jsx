@@ -69,26 +69,6 @@ export default function File() {
             <tr>
               <th>STT</th>
               <th>File name upload</th>
-            </tr>
-          </thead>
-          <tbody>
-            {selectedFile.length > 0
-              ? selectedFile.map((file, index) => (
-                  <tr key={index}>
-                    <td>{index}</td>
-                    <td>{file.name}</td>
-                  </tr>
-                ))
-              : "Chưa upload file"}
-          </tbody>
-        </table>
-      </div>
-      <div className="file__tab__middle">
-        <table>
-          <thead>
-            <tr>
-              <th>STT</th>
-              <th>File name upload</th>
               <th>ID</th>
               <th>Status</th>
               <th>Date</th>

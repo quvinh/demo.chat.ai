@@ -78,24 +78,133 @@
   font-weight: 700;
   text-transform: uppercase;
 }
-.main .fine-tunes__tab .fine-tunes__middle {
+.main .fine-tunes__tab .fine-tunes__tab__top .fine-tunes__tab__top-title {
+  padding-top: 15px;
+}
+.main .fine-tunes__tab .fine-tunes__tab__middle {
   display: flex;
-  justify-content: center;
   padding: 1rem;
 }
-.main .fine-tunes__tab .fine-tunes__middle table {
+.main .fine-tunes__tab .fine-tunes__tab__middle .fine-tunes__tab__middle-create {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 3px solid;
+  border-radius: 10px;
+  text-transform: capitalize;
+  padding: 0 1rem;
+}
+.main .fine-tunes__tab .fine-tunes__tab__middle .fine-tunes__tab__middle-create .fine-tunes__tab__middle-create-title {
+  margin-top: 10px;
+  display: block;
+  font-weight: 700;
+}
+.main .fine-tunes__tab .fine-tunes__tab__middle .fine-tunes__tab__middle-create .fine-tunes__tab__middle-create-title input {
+  display: inline-block;
+  margin-left: 30px;
+  color: #000;
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 5px;
+  width: 60%;
+  outline: none;
+}
+.main .fine-tunes__tab .fine-tunes__tab__middle .fine-tunes__tab__middle-create .fine-tunes__tab__middle-create-title select {
+  display: inline-block;
+  margin-left: 95px;
+  color: #000;
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 15px 5px;
+  width: 62%;
+  outline: none;
+}
+.main .fine-tunes__tab .fine-tunes__tab__middle .fine-tunes__tab__middle-create button {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  align-self: center;
+  background: #000;
+  color: #fff;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.4s ease-in;
+}
+.main .fine-tunes__tab .fine-tunes__tab__middle .fine-tunes__tab__middle-create button:hover {
+  color: red;
+}
+.main .fine-tunes__tab .fine-tunes__tab__middle .fine-tunes__tab__middle-create .fine-tunes__tab__middle-response {
+  color: red;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.main .fine-tunes__tab h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+.main .fine-tunes__tab .list-file-tunes {
+  padding: 1rem;
+}
+.main .fine-tunes__tab .list-file-tunes table {
   width: 100%;
   border-collapse: collapse;
   overflow-y: auto;
+  height: 500px;
 }
-.main .fine-tunes__tab .fine-tunes__middle table thead tr th {
-  border: 3px solid;
+.main .fine-tunes__tab .list-file-tunes table thead tr th {
+  border: 2px solid;
 }
-.main .fine-tunes__tab .fine-tunes__middle table tbody tr td {
-  border: 3px solid;
+.main .fine-tunes__tab .list-file-tunes table tbody tr td {
+  border: 2px solid;
+  padding: 5px;
   text-align: center;
 }
-.main .fine-tunes__tab .fine-tunes__middle table tbody tr td .fine-tunes-status {
-  font-weight: 700;
+.main .fine-tunes__tab .list-file-tunes table tbody tr td:first-child {
+  text-align: center;
+}
+.main .fine-tunes__tab .list-file-tunes table tbody tr td:last-child span {
   color: green;
+  font-weight: 600;
+}
+.main .fine-tunes__tab .fine-tunes__tab-completion {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.main .fine-tunes__tab .fine-tunes__tab-completion .fine-tunes__tab-completion-title {
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.main .fine-tunes__tab .fine-tunes__tab-completion .fine-tunes__tab-completion-title label {
+  flex-basis: 15%;
+}
+.main .fine-tunes__tab .fine-tunes__tab-completion .fine-tunes__tab-completion-title select {
+  flex-basis: 100%;
+  display: block;
+  padding: 10px 0;
+  margin-left: 10px;
+}
+.main .fine-tunes__tab .fine-tunes__tab-completion .fine-tunes__tab-completion-chat {
+  margin-top: 20px;
+  border: 3px solid;
+}
+.main .fine-tunes__tab .fine-tunes__tab-completion .fine-tunes__tab-completion-send-chat {
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem;
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.4s ease-in;
+}
+.main .fine-tunes__tab .fine-tunes__tab-completion .fine-tunes__tab-completion-send-chat:hover {
+  color: red;
 }/*# sourceMappingURL=app.css.map */
