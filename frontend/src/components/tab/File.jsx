@@ -71,6 +71,8 @@ export default function File() {
               <th>STT</th>
               <th>File name upload</th>
               <th>ID</th>
+              <th>Status</th>
+              <th>Date</th>
             </tr>
           </thead>
           <tbody>
@@ -80,6 +82,8 @@ export default function File() {
                     <td>{index + 1}</td>
                     <td>{file.filename}</td>
                     <td>{file.id}</td>
+                    <td>{file.status}</td>                 
+                    <td>{new Date(file.created_at).toLocaleTimeString()}</td>
                   </tr>
                 ))
               : "Không có file"}

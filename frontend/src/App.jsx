@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import "./styles/app.css";
 import Chatbot from "./components/chatbot";
 import Header from "./components/header/Header";
 import Main from "./components/main/Main";
