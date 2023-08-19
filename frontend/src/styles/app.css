@@ -1,0 +1,101 @@
+.header {
+  font-family: monospace;
+  padding: 1rem;
+}
+.header .header__title {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.main .main__feature {
+  display: flex;
+  justify-content: center;
+}
+.main .main__feature .main__feature__button {
+  border: none;
+  background-color: #fff;
+  margin: 0.5rem;
+  padding: 1rem;
+  width: 150px;
+  text-align: center;
+  border-radius: 10px;
+  transition: 0.4s;
+  font-weight: 600;
+  box-shadow: 1px 2px 0px 2px rgb(235, 231, 231);
+  cursor: pointer;
+}
+.main .main__feature .main__feature__button:hover {
+  box-shadow: 5px 5px 1px 1px rgb(235, 231, 231);
+}
+.main .tab {
+  margin-top: 20px;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  color: #000;
+}
+.main .file__tab .file__tab__top {
+  display: flex;
+  flex-direction: column;
+}
+.main .file__tab .file__tab__top .file__tab__top__upload {
+  background: #279eff;
+  border: none;
+  border-radius: 20px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  position: relative;
+  transition: 0.4s ease-in;
+  font-weight: 700;
+  cursor: pointer;
+}
+.main .file__tab .file__tab__top .file__tab__top__upload:hover {
+  color: #fff;
+  background: #000;
+}
+.main .file__tab .file__tab__middle {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.main .file__tab .file__tab__middle table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-y: auto;
+}
+.main .file__tab .file__tab__middle table thead tr th {
+  border: 3px solid;
+}
+.main .file__tab .file__tab__middle table tbody tr td {
+  border: 3px solid;
+}
+.main .file__tab .file__tab__middle table tbody tr td:first-child {
+  text-align: center;
+}
+.main .fine-tunes__tab .fine-tunes__tab__top {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.main .fine-tunes__tab .fine-tunes__middle {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.main .fine-tunes__tab .fine-tunes__middle table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-y: auto;
+}
+.main .fine-tunes__tab .fine-tunes__middle table thead tr th {
+  border: 3px solid;
+}
+.main .fine-tunes__tab .fine-tunes__middle table tbody tr td {
+  border: 3px solid;
+  text-align: center;
+}
+.main .fine-tunes__tab .fine-tunes__middle table tbody tr td .fine-tunes-status {
+  font-weight: 700;
+  color: green;
+}/*# sourceMappingURL=app.css.map */
