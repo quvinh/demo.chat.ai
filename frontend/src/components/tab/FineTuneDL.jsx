@@ -111,8 +111,6 @@ export default function FineTuning() {
           </tbody>
         </table>
       </div>
-      </div>
-      </div>
       <div className="box-chat__completion">
       <h2>Completion Chat</h2>
       <div className="fine-tunes__tab-completion">
