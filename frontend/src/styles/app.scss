@@ -134,6 +134,47 @@
       display: flex;
       justify-content: center;
       padding: 1rem;
+      .box-comfirm__delete-file {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+        p {
+          margin-bottom: 10px;
+        }
+        button {
+          margin-right: 10px;
+          padding: 5px 10px;
+          background-color: #f44336;
+          color: white;
+          border: none;
+          cursor: pointer;
+        }
+        .button.cancel {
+          background-color: #ccc;
+        }
+        /* Add animation for popup */
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        .fade-in {
+          animation: fadeIn 0.3s ease-in-out;
+        }
+      }
+      .btn-action__delete-file {
+        cursor: pointer;
+      }
       table {
         width: 100%;
         border-collapse: collapse;
