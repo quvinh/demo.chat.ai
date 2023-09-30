@@ -1,0 +1,1952 @@
+// Data products
+  productCategories() {
+    return [
+      {
+        id: 1,
+        name: 'Quần áo nữ',
+        photo: ''
+      },
+      {
+        id: 2,
+        name: 'Giày nữ',
+        photo: ''
+      },
+      {
+        id: 3,
+        name: 'Quần áo nam',
+        photo: ''
+      },
+      {
+        id: 4,
+        name: 'Giày nam',
+        photo: ''
+      },
+      {
+        id: 5,
+        name: 'Đồ lót',
+        photo: ''
+      },
+      {
+        id: 6,
+        name: 'Mẹ và bé',
+        photo: ''
+      },
+      {
+        id: 7,
+        name: 'Điện thoại di động',
+        photo: ''
+      },
+      {
+        id: 8,
+        name: 'Kỹ thuật số',
+        photo: ''
+      },
+      {
+        id: 9,
+        name: 'Thiết bị gia dụng',
+        photo: ''
+      },
+      {
+        id: 10,
+        name: 'Vẻ đẹp',
+        photo: ''
+      },
+      {
+        id: 11,
+        name: 'Hành lý',
+        photo: ''
+      },
+      {
+        id: 12,
+        name: 'Thể thao',
+        photo: ''
+      },
+      {
+        id: 13,
+        name: 'Ngoài trời',
+        photo: ''
+      },
+      {
+        id: 14,
+        name: 'Trang trí nhà cửa',
+        photo: ''
+      },
+      {
+        id: 15,
+        name: 'Gia đình',
+        photo: ''
+      },
+      {
+        id: 16,
+        name: 'Đồ gia dụng',
+        photo: ''
+      },
+      {
+        id: 17,
+        name: 'Hoa và vật nuôi',
+        photo: ''
+      },
+      {
+        id: 18,
+        name: 'Phụ kiện',
+        photo: ''
+      },
+      {
+        id: 19,
+        name: 'Thức ăn',
+        photo: ''
+      },
+      {
+        id: 20,
+        name: 'Đồ tươi',
+        photo: ''
+      },
+      {
+        id: 21,
+        name: 'Xe mô tô',
+        photo: ''
+      },
+      {
+        id: 22,
+        name: 'Y học',
+        photo: ''
+      },
+      {
+        id: 23,
+        name: 'Sách',
+        photo: ''
+      },
+      {
+        id: 24,
+        name: 'Chăm sóc',
+        photo: ''
+      },
+      {
+        id: 25,
+        name: 'Nhạc cụ',
+        photo: ''
+      }
+    ];
+  },
+
+  /**
+   * Product group
+   * Docs:
+   * https://marc.com.vn/blogs/mac-dep/cac-phong-cach-thoi-trang
+   */
+  productGroups() {
+    return [
+      {
+        id: 1,
+        category_id: 1,
+        name: 'Phòng phong cách',
+        groups: [
+          {
+            name: 'Tự do (Hippie)',
+            photo: ''
+          },
+          {
+            name: 'Vintage nhẹ nhàng',
+            photo: ''
+          },
+          {
+            name: 'Tối giản (Minimalism)',
+            photo: ''
+          },
+          {
+            name: 'Bohemian - độc đáo',
+            photo: ''
+          },
+          {
+            name: 'Preppy cá tính',
+            photo: ''
+          },
+          {
+            name: 'Normcore giản dị',
+            photo: ''
+          },
+          {
+            name: 'Thể thao',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 2,
+        category_id: 1,
+        name: 'Tính khí đầm',
+        groups: [
+          {
+            name: 'Váy in',
+            photo: ''
+          },
+          {
+            name: 'Bông và vải lanh',
+            photo: ''
+          },
+          {
+            name: 'Đầm Sling',
+            photo: ''
+          },
+          {
+            name: 'Váy hoa',
+            photo: ''
+          },
+          {
+            name: 'Polka dot dress',
+            photo: ''
+          },
+          {
+            name: 'Váy Organza',
+            photo: ''
+          },
+          {
+            name: 'Đầm lụa',
+            photo: ''
+          },
+          {
+            name: 'Váy bãi biển',
+            photo: ''
+          },
+          {
+            name: 'Váy bohemian',
+            photo: ''
+          },
+          {
+            name: 'Váy đuôi cá',
+            photo: ''
+          },
+          {
+            name: 'Váy xếp li',
+            photo: ''
+          },
+          {
+            name: 'Sườn xám',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 3,
+        category_id: 1,
+        name: 'Thời trang bên trong',
+        groups: [
+          {
+            name: 'Áo sơ mi',
+            photo: ''
+          },
+          {
+            name: 'Áo thun voan',
+            photo: ''
+          },
+          {
+            name: 'Áo ren',
+            photo: ''
+          },
+          {
+            name: 'Áo phông',
+            photo: ''
+          },
+          {
+            name: 'Hàng dệt kim',
+            photo: ''
+          },
+          {
+            name: 'Áo len cao cổ',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 4,
+        category_id: 1,
+        name: 'Quần Joker',
+        groups: [
+          {
+            name: 'Quần âu',
+            photo: ''
+          },
+          {
+            name: 'Quần bò',
+            photo: ''
+          },
+          {
+            name: 'Quần đầm',
+            photo: ''
+          },
+          {
+            name: 'Quần bút chì',
+            photo: ''
+          },
+          {
+            name: 'Quần harem',
+            photo: ''
+          },
+          {
+            name: 'Quần thẳng',
+            photo: ''
+          },
+          {
+            name: 'Quần vi',
+            photo: ''
+          },
+          {
+            name: 'Quần chân rộng',
+            photo: ''
+          },
+          {
+            name: 'Quần yếm',
+            photo: ''
+          },
+          {
+            name: 'Quần bó hoa',
+            photo: ''
+          },
+          {
+            name: 'Quần yếm có dây',
+            photo: ''
+          },
+          {
+            name: 'Jumpsuit',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 5,
+        category_id: 1,
+        name: 'Quần áo nổi bật',
+        groups: [
+          {
+            name: 'Quần áo nữ Trung quốc',
+            photo: ''
+          },
+          {
+            name: 'Quần áo nữ cỡ lớn',
+            photo: ''
+          },
+          {
+            name: 'Thiết kế thương hiệu',
+            photo: ''
+          },
+          {
+            name: 'Bộ đồ giải trí',
+            photo: ''
+          },
+          {
+            name: 'Bộ đồ chuyên nghiệp',
+            photo: ''
+          },
+          {
+            name: 'Phù hợp với thời trang',
+            photo: ''
+          },
+          {
+            name: 'Trang phục dân dụng',
+            photo: ''
+          },
+          {
+            name: 'Trang phục sân khấu',
+            photo: ''
+          },
+          {
+            name: 'Váy cưới',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 6,
+        category_id: 1,
+        name: 'Áo thời trang',
+        groups: [
+          {
+            name: 'Áo khoác denim',
+            photo: ''
+          },
+          {
+            name: 'Áo ngắn',
+            photo: ''
+          },
+          {
+            name: 'Bộ đồ nhỏ',
+            photo: ''
+          },
+          {
+            name: 'Áo',
+            photo: ''
+          },
+          {
+            name: 'Áo dệt kim',
+            photo: ''
+          },
+          {
+            name: 'Áo khoác bông',
+            photo: ''
+          },
+          {
+            name: 'Áo len',
+            photo: ''
+          },
+          {
+            name: 'Quần áo da',
+            photo: ''
+          },
+          {
+            name: 'Lông thú',
+            photo: ''
+          },
+          {
+            name: 'Áo len',
+            photo: ''
+          },
+          {
+            name: 'Áo gió',
+            photo: ''
+          },
+          {
+            name: 'Áo khoác xuống',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 7,
+        category_id: 1,
+        name: 'Tường thương hiệu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 8,
+        category_id: 2,
+        name: 'Boots',
+        groups: [
+          {
+            name: 'Mắt cá chân',
+            photo: ''
+          },
+          {
+            name: 'Bít tất ngắn',
+            photo: ''
+          },
+          {
+            name: 'Chelsea',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 9,
+        category_id: 2,
+        name: 'Giày thể thao',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 10,
+        category_id: 2,
+        name: 'Giày cao gót',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 11,
+        category_id: 2,
+        name: 'Thương hiệu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 12,
+        category_id: 3,
+        name: 'Phong cách',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 13,
+        category_id: 3,
+        name: 'Quần âu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 14,
+        category_id: 3,
+        name: 'Xu hướng',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 15,
+        category_id: 3,
+        name: 'Áo khoác bông',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 16,
+        category_id: 3,
+        name: 'Áo len',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 17,
+        category_id: 3,
+        name: 'Áo khoác',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 18,
+        category_id: 3,
+        name: 'Thương hiệu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 19,
+        category_id: 4,
+        name: 'Dép xăng đan',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 20,
+        category_id: 4,
+        name: 'Giày cưới',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 21,
+        category_id: 4,
+        name: 'Giày thường',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 22,
+        category_id: 4,
+        name: 'Phong trào thời trang',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 23,
+        category_id: 4,
+        name: 'Giải trí hàng ngày',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 24,
+        category_id: 4,
+        name: 'Thương hiệu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 25,
+        category_id: 5,
+        name: 'Áo ngực',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 26,
+        category_id: 5,
+        name: 'Quần lót',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 27,
+        category_id: 5,
+        name: 'Điêu khắc cơ thể',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 28,
+        category_id: 5,
+        name: 'Tất',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 29,
+        category_id: 5,
+        name: 'Quần áo ngủ',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 30,
+        category_id: 5,
+        name: 'Đồ lót nhiệt',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 31,
+        category_id: 5,
+        name: 'Thương hiệu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 32,
+        category_id: 6,
+        name: 'Sửa bột, thực phẩm bổ sung',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 33,
+        category_id: 6,
+        name: 'Khu vực mẹ mang thai',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 34,
+        category_id: 6,
+        name: 'Chăm sóc, cho ăn',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 35,
+        category_id: 6,
+        name: 'Vận chuyển, giường du lịch',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 36,
+        category_id: 6,
+        name: 'Đồ chơi',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 37,
+        category_id: 6,
+        name: 'Quần áo trẻ em',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 38,
+        category_id: 6,
+        name: 'Giày trẻ em',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 39,
+        category_id: 6,
+        name: 'Chế độ chơi',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 40,
+        category_id: 6,
+        name: 'Thương hiệu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 41,
+        category_id: 7,
+        name: 'Thương hiệu nổi tiếng',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 42,
+        category_id: 8,
+        name: 'Nhiếp ảnh',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 43,
+        category_id: 8,
+        name: 'Video kỹ thuật số',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 44,
+        category_id: 8,
+        name: 'Phần cứng máy tính DIY',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 45,
+        category_id: 8,
+        name: 'Thiết bị văn hoá, giáo dục, văn phòng',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 46,
+        category_id: 8,
+        name: 'Thương hiệu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 47,
+        category_id: 9,
+        name: 'Âm thanh, phim màu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 48,
+        category_id: 9,
+        name: 'Điều hoà không khí',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 49,
+        category_id: 9,
+        name: 'Máy hút khói',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 50,
+        category_id: 9,
+        name: 'Thiết bị nhà bếp',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 51,
+        category_id: 9,
+        name: 'Thiết bị',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 52,
+        category_id: 9,
+        name: 'Chăm sóc cá nhân',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 53,
+        category_id: 9,
+        name: 'Thương hiệu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 54,
+        category_id: 10,
+        name: 'Chăm sóc da',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 55,
+        category_id: 10,
+        name: 'Phân loại điều dưỡng',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 56,
+        category_id: 10,
+        name: 'Đồ trang điểm',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 57,
+        category_id: 10,
+        name: 'Chăm sóc da cho nam',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 58,
+        category_id: 10,
+        name: 'Thương hiệu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 59,
+        category_id: 11,
+        name: 'Túi xách nữ',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 60,
+        category_id: 11,
+        name: 'Túi xách nam',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 61,
+        category_id: 11,
+        name: 'Đồ xe đẩy',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 62,
+        category_id: 11,
+        name: 'Ba lô',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 63,
+        category_id: 11,
+        name: 'Ví tiền',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 64,
+        category_id: 11,
+        name: 'Khác',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 65,
+        category_id: 11,
+        name: 'Thương hiệu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 66,
+        category_id: 12,
+        name: 'Giày chạy bộ',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 67,
+        category_id: 12,
+        name: 'Giày bóng rổ',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 68,
+        category_id: 12,
+        name: 'Giày thường',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 69,
+        category_id: 12,
+        name: 'Đồ thể thao',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 70,
+        category_id: 12,
+        name: 'Thể thao',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 71,
+        category_id: 12,
+        name: 'Thương hiệu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 72,
+        category_id: 13,
+        name: 'Quần áo ngoài trời',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 73,
+        category_id: 13,
+        name: 'Giày dép ngoài trời',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 74,
+        category_id: 13,
+        name: 'Thiết bị ngoài trời',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 75,
+        category_id: 13,
+        name: 'Xe đạp',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 76,
+        category_id: 13,
+        name: 'Câu cá',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 77,
+        category_id: 13,
+        name: 'Túi ngoài trời',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 78,
+        category_id: 13,
+        name: 'Thương hiệu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 79,
+        category_id: 14,
+        name: 'Treo tường',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 80,
+        category_id: 14,
+        name: 'Nhà bếp và phòng tắm',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 81,
+        category_id: 14,
+        name: 'Phần cứng điện',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 82,
+        category_id: 14,
+        name: 'Nền đất',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 83,
+        category_id: 14,
+        name: 'Nhà tuỳ chỉnh',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 84,
+        category_id: 14,
+        name: 'Thiết kế trang trí',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 85,
+        category_id: 14,
+        name: 'Nội thất',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 86,
+        category_id: 14,
+        name: 'Thương hiệu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 87,
+        category_id: 15,
+        name: 'Bộ đồ giường',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 88,
+        category_id: 15,
+        name: 'Quilt, lõi',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 89,
+        category_id: 15,
+        name: 'Gối sức khoẻ',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 90,
+        category_id: 15,
+        name: 'Hàng dệt khác tại nhà',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 91,
+        category_id: 15,
+        name: 'Gia đình',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 92,
+        category_id: 15,
+        name: 'Phụ kiện nhà',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 93,
+        category_id: 15,
+        name: 'Thương hiệu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 94,
+        category_id: 16,
+        name: 'Dùng trong mùa',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 95,
+        category_id: 16,
+        name: 'Phục vụ nhà bếp',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 96,
+        category_id: 16,
+        name: 'Lưu trữ, hoàn thiện',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 97,
+        category_id: 16,
+        name: 'Quà tặng hàng ngày',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 98,
+        category_id: 16,
+        name: 'Vệ sinh gia đình',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 99,
+        category_id: 17,
+        name: 'Hoa làm vườn',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 100,
+        category_id: 17,
+        name: 'Đồ dùng, thức ăn thú cưng',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 101,
+        category_id: 18,
+        name: 'Đồ trang sức',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 102,
+        category_id: 18,
+        name: 'Đồng hồ',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 102,
+        category_id: 18,
+        name: 'Phụ kiện kính',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 103,
+        category_id: 19,
+        name: 'Thực phẩm nhập khẩu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 104,
+        category_id: 19,
+        name: 'Đồ ăn nhẹ thông thường',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 105,
+        category_id: 19,
+        name: 'Trà',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 106,
+        category_id: 19,
+        name: 'Rượu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 107,
+        category_id: 19,
+        name: 'Dầu khô và ngũ cốc',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 108,
+        category_id: 20,
+        name: 'Trái cây tươi',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 109,
+        category_id: 20,
+        name: 'Hải sản và thuỷ sản',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 110,
+        category_id: 20,
+        name: 'Thịt',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 111,
+        category_id: 20,
+        name: 'Trứng',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 112,
+        category_id: 20,
+        name: 'Kem',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 113,
+        category_id: 20,
+        name: 'Rau quả tươi',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 114,
+        category_id: 21,
+        name: 'Xe chất lượng',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 115,
+        category_id: 21,
+        name: 'Phụ kiện Boutique',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 116,
+        category_id: 21,
+        name: 'Điều hướng điện tử',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 117,
+        category_id: 21,
+        name: 'Phụ kiện lớn',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 118,
+        category_id: 21,
+        name: 'Chăm sóc làm đẹp xe',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 119,
+        category_id: 21,
+        name: 'Ali moto',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 120,
+        category_id: 21,
+        name: 'Thương hiệu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 121,
+        category_id: 22,
+        name: 'Kiểm tra thuốc',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 122,
+        category_id: 22,
+        name: 'Bổ sung dinh dưỡng',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 123,
+        category_id: 22,
+        name: 'Kính áp tròng người lớn',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 124,
+        category_id: 22,
+        name: 'Thiết bị y tế',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 125,
+        category_id: 22,
+        name: 'Thực phẩm sức khoẻ',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 126,
+        category_id: 22,
+        name: 'Sức khoẻ nuôi dưỡng',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 127,
+        category_id: 23,
+        name: 'Văn học và khoa học xã hội',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 128,
+        category_id: 23,
+        name: 'Sách thiếu nhi',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 129,
+        category_id: 23,
+        name: 'Kiểm tra giáo dục',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 130,
+        category_id: 23,
+        name: 'Tài liệu giảng dạy',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 131,
+        category_id: 23,
+        name: 'Đời sống quản lý khoa học và công nghệ',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 132,
+        category_id: 23,
+        name: 'Tạp chí, sách gốc',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 133,
+        category_id: 24,
+        name: 'Chăm sóc cá nhân',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 134,
+        category_id: 24,
+        name: 'Chăm sóc cho nữ',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 135,
+        category_id: 24,
+        name: 'Giấy, khăn giấy',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 136,
+        category_id: 24,
+        name: 'Quần áo làm sạch hộ gia đình',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 137,
+        category_id: 24,
+        name: 'Tạo kiểu tóc',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 138,
+        category_id: 25,
+        name: 'Bàn phím',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 139,
+        category_id: 25,
+        name: 'Công cụ có dây',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 140,
+        category_id: 25,
+        name: 'Dụng cụ gỗ',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 141,
+        category_id: 25,
+        name: 'Nhạc cụ gỗ',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 142,
+        category_id: 25,
+        name: 'Nhạc cụ dân tộc',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 143,
+        category_id: 25,
+        name: 'Phụ kiện nhạc cụ',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      },
+      {
+        id: 144,
+        category_id: 25,
+        name: 'Thương hiệu',
+        groups: [
+          {
+            name: '',
+            photo: ''
+          }
+        ]
+      }
+    ];
+  }
+};
